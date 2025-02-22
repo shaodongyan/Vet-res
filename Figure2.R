@@ -3,21 +3,7 @@ library(ggstatsplot)
 library(ggplot2)
 
 setwd("/Users/R/carpet/Pathogen/")
-temp_all=read.csv("对比.csv")
-
-
-p=ggwithinstats(
-  data  = temp_all,
-  x     = Group,
-  y     = Percent,  
-  type = "p",
-  effsize.type = "g")
-p
-
-
-
-
-
+temp_all=read.csv("compare.csv")
 
 library(ggsci)
 library(ggstatsplot)
@@ -81,12 +67,3 @@ extract_stats(p)
 remove_geom(p, "GeomViolin")
 
 ggsave("Figure2-250201.pdf",height = 6,width = 5)
-
-
-ggwithinstats(
-  data  = temp_all,
-  x     = Group,
-  y     = Percent2,  
-  type = "p",
-  effsize.type = "g")
-
